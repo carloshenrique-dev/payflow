@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/modules/login/login_page.dart';
+import 'package:payflow/modules/splash/splash_page.dart';
+
+import 'shared/themes/app_colors.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(AppWidget());
 }
 
-class MyApp extends StatelessWidget {
+class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          color: Colors.cyanAccent,
-          child: Center(
-            child: Container(
-              width: 300,
-              height: 300,
-              color: Colors.blue,
-            ),
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primaryColor: AppColors.primary),
+      home: LoginPage(),
     );
   }
 }
