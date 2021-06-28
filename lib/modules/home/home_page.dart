@@ -65,15 +65,19 @@ class _HomePageState extends State<HomePage> {
           children: [
             IconButton(
               onPressed: () {
-                setState(() {
+                Navigator.pushReplacementNamed(context, '/insert_boleto');
+
+                /*setState(() {
                   controller.setPage(0);
-                });
+                });*/
               },
               icon: Icon(Icons.home),
               color: AppColors.primary,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/barcode_scanner');
+              },
               child: Container(
                 width: 56,
                 height: 56,
@@ -81,9 +85,8 @@ class _HomePageState extends State<HomePage> {
                   color: AppColors.primary,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.add_box_outlined),
+                child: Icon(
+                  Icons.add_box_outlined,
                   color: AppColors.background,
                 ),
               ),

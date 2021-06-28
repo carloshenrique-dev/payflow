@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
@@ -32,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
               height: size.height * 0.36,
             ),
             Positioned(
-              top: size.height * 0.08,
+              top: size.height * 0.05,
               left: 0,
               right: 0,
               child: Image.asset(
@@ -42,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Positioned(
-              bottom: size.height * 0.1,
+              bottom: size.height * 0.03,
               left: 0,
               right: 0,
               child: Column(
@@ -52,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                   Image.asset(AppImages.logomini),
                   Padding(
                     padding:
-                        const EdgeInsets.only(top: 30, left: 70.0, right: 70.0),
+                        const EdgeInsets.only(top: 10, left: 70.0, right: 70.0),
                     child: Text(
                       'Organize seus boletos em um só lugar',
                       style: AppTextStyles.titleHome,
@@ -61,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(left: 40, right: 40, top: 30),
+                        const EdgeInsets.only(left: 40, right: 40, top: 20),
                     child: SocialLoginButton(onTap: () {
                       controller.loginGoogle(context);
                     }),
