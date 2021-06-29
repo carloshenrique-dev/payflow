@@ -21,7 +21,8 @@ class _BarCodeScannerPageState extends State<BarCodeScannerPage> {
     controller.getAvailableCameras();
     controller.statusNotifier.addListener(() {
       if (controller.status.hasBarCode) {
-        Navigator.pushReplacementNamed(context, '/insert_boleto');
+        Navigator.pushReplacementNamed(context, '/insert_boleto',
+            arguments: controller.status.barcode);
       }
     });
     super.initState();
@@ -85,9 +86,13 @@ class _BarCodeScannerPageState extends State<BarCodeScannerPage> {
               ),
               bottomNavigationBar: SetLabelButtons(
                 primaryLabel: 'Inserir codigo do boleto',
-                primaryOnPressed: () {},
+                primaryOnPressed: () {
+                  Navigator.pushReplacementNamed(context, '/insert_boleto');
+                },
                 secondaryLabel: 'Adicionar da galeria',
-                secondaryOnPressed: () {},
+                secondaryOnPressed: () {
+                  controller.scanWithImagePicker();
+                },
               ),
             ),
           ),
